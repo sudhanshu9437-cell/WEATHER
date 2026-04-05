@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(
+                to bottom,
+                #020411 0%,
+                #04101c 15%,
+                #071a28 30%,
+                #0d2a36 50%,
+                #15424b 75%,
+                #23626b 100%
+            );
+        }
+        ::placeholder {
+            color: #cac7ff;
+        }
+        .search-bar {
+            backdrop-filter: blur(10px) saturate(180%);
+        }
+        .info-gap { gap: 10%; }
+        .data-gap { gap: 25%; }
+        .option-gap { gap: 5%; }
+
+        #image:hover {
+            transform: scale(1.2);
+            transition: all 0.8s ease;
+        }
+        .information:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .info:hover {
+            transform: scale(1.2);
+            transition: all 0.8s ease;
+        }
+        .optioncard:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            transition: all 0.8s ease;
+        }
+        .optioncard:active {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+    </style>
+</head>
+<body class="m-0 p-0 min-h-screen bg-no-repeat bg-cover text-white">
+
+    <div class="flex flex-col items-center">
+        <h1 id="weather" class="text-5xl text-white text-center font-sans py-5">WEATHER</h1>
+        <form action="" class="search-bar flex justify-center mt-2.5 w-full max-w-xl items-center rounded-full px-5 py-1 bg-white/20">
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name"
+                autocomplete="off"
+                class="flex-1 border-0 outline-none px-2.5 py-2.5 text-xl bg-transparent text-white">
+            <button type="submit" id="submit" class="border-0 bg-transparent cursor-pointer">
+                <i class="fa-solid fa-magnifying-glass text-white text-xl"></i>
+            </button>
+        </form>
+    </div>
+
+    <div class="flex justify-center mt-5 data-gap m-5 mb-10 ">
+
+        <div class="place mt-20 flex flex-col items-center" id="place">
+            <div id="location-container" class="flex items-center">
+                <i id="location-icon" class="fa-solid fa-location-dot mr-2.5 text-3xl bg-transparent text-white"></i>
+                <div id="city-name" class="text-6xl mb-0" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">ROURKELA</div>
+                <div id="country" class="text-3xl p-2 mt-5" style="color:rgba(245,245,245,0.748);font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">IN</div>
+            </div>
+            <p id="date-time" class="text-xl mt-1" style="color:rgba(245,245,245,0.748);font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;"></p>
+        </div>
+
+        <div class="weather-info flex justify-center items-center mt-10 mr-12">
+            <div id="image" class="text-9xl cursor-pointer">☀️</div>
+            <div>
+                <h6 class="text-base m-0 px-2.5" style="color:rgba(245,245,245,0.748);font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">TEMPERATURE</h6>
+                <h1 id="temperature" class="text-6xl px-2.5 m-0" style="font-family:Arial,Helvetica,sans-serif;"></h1>
+                <h1 id="weather-type" class="text-2xl m-0 px-2.5" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="information flex justify-center  p-5 rounded-2xl bg-white/20 info-gap ml-10 mr-10">
+
+        <div class="info flex flex-col items-center cursor-pointer ">
+            <h6 class="text-base m-0" style="color:rgba(245,245,245,0.748);font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">
+                <i class="fa-solid fa-temperature-half text-base mt-2.5 bg-transparent" style="color:rgba(245,245,245,0.748);"></i> FEEL LIKE
+            </h6>
+            <h1 id="feels-like" class="text-3xl m-0" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">32°c</h1>
+        </div>
+
+        <div class="info flex flex-col items-center cursor-pointer">
+            <h6 class="text-base m-0" style="color:rgba(245,245,245,0.748);font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">
+                <i class="fa-solid fa-droplet text-base mt-2.5 bg-transparent" style="color:rgba(245,245,245,0.748);"></i> HUMIDITY
+            </h6>
+            <h1 id="humidity" class="text-3xl m-0" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">60%</h1>
+        </div>
+
+        <div class="info flex flex-col items-center cursor-pointer">
+            <h6 class="text-base m-0" style="color:rgba(245,245,245,0.748);font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">
+                <i class="fa-solid fa-wind text-base mt-2.5 bg-transparent" style="color:rgba(245,245,245,0.748);"></i> WIND SPEED
+            </h6>
+            <h1 id="wind-speed" class="text-3xl m-0" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">10 km/h</h1>
+        </div>
+
+        <div class="info flex flex-col items-center cursor-pointer">
+            <h6 class="text-base m-0" style="color:rgba(245,245,245,0.748);font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">
+                <i class="fa-solid fa-cloud-rain text-base mt-2.5 bg-transparent" style="color:rgba(245,245,245,0.748);"></i> CHANCE OF RAIN
+            </h6>
+            <h1 id="chance-of-rain" class="text-3xl m-0" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;">20%</h1>
+        </div>
+    </div>
+
+    <h1 class="text-2xl text-white p-4 flex justify-center">TOP CITIES</h1>
+    <div id="option" class="flex justify-center option-gap p-5">
+        <div id="delhi" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer ">
+            <h1 id="delhi-name"style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity" >DELHI</h1>
+            <div id="delhi-weather" class="optionweather">☀️</div>
+            <div id="delhi-temperature" class="optiontemperature">30°c</div>
+        </div>
+        <div id="mumbai" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer">
+            <h1 id="mumbai-name"style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">MUMBAI</h1>
+            <div id="mumbai-weather" class="optionweather">☀️</div>
+            <div id="mumbai-temperature" class="optiontemperature">30°c</div>
+        </div>
+        <div id="kolkata" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer">
+            <h1 id="kolkata-name"style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">KOLKATA</h1>
+            <div id="kolkata-weather" class="optionweather">☀️</div>
+            <div id="kolkata-temperature" class="optiontemperature">30°c</div>
+        </div>
+        <div id="chennai" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer">
+            <h1 id="chennai-name"style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">CHENNAI</h1>
+            <div id="chennai-weather" class="optionweather">☀️</div>
+            <div id="chennai-temperature" class="optiontemperature">30°c</div>
+        </div>
+        <div id="hyderabad" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer">
+            <h1 id="hyderabad-name"style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">HYDERABAD</h1>
+            <div id="hyderabad-weather" class="optionweather">☀️</div>
+            <div id="hyderabad-temperature" class="optiontemperature">30°c</div>
+        </div>
+        <div id="bengaluru" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer">
+            <h1 id="bengaluru-name"style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">BENGALURU</h1>
+            <div id="bengaluru-weather" class="optionweather">☀️</div>
+            <div id="bengaluru-temperature" class="optiontemperature">30°c</div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
