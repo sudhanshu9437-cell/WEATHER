@@ -13,9 +13,7 @@ https://sudhanshu9437-cell.github.io/WEATHER/
 
 - 🔍 Search weather by city name  
 - 🌡️ Displays temperature, humidity, and weather condition  
-- ☁️ Dynamic weather icons (clear, cloudy, rain, etc.)  
-- 📱 Responsive design (works on mobile & desktop)  
-- ⚡ Fast API-based data fetching  
+- ☁️ Dynamic weather icons (clear, cloudy, rain, etc.)   
 
 ---
 
