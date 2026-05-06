@@ -34,7 +34,6 @@
             .data-gap { gap: 25%; }
             .option-gap { gap: 5%; }
         }
-
         #image:hover {
             transform: scale(1.2);
             transition: all 0.8s ease;
@@ -51,6 +50,19 @@
             transform: translateY(-5px);
             transition: all 0.8s ease;
         }
+        @media (max-width: 600px) {
+        .information {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px !important;
+        margin: 10px !important;
+        padding: 20px !important;
+        }
+        .info {
+        width: 100%;
+        margin: 0 !important;
+        }
+    }
     </style>
 </head>
 <body class="m-0 p-0 min-h-screen bg-no-repeat bg-cover text-white overflow-x-hidden">
@@ -91,7 +103,7 @@
         </div>
     </div>
 
-    <div class="information flex flex-wrap md:flex-nowrap justify-center p-5 rounded-2xl bg-white/20 info-gap mx-4 md:mx-10 mb-5">
+    <div class="information flex flex-wrap flex-row justify-center p-5 rounded-2xl bg-white/20 mx-10 gap-x-56 gap-y-10">
 
         <div class="info flex flex-col items-center cursor-pointer ">
             <h6 class="text-sm md:text-base m-0" style="color:rgba(245,245,245,0.748);">
@@ -127,59 +139,59 @@
     <div id="option" class="flex option-gap p-5 overflow-x-auto no-scrollbar" style="scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.3) transparent;">
     <div id="delhi" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="delhi-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">DELHI</h1>
-        <div id="delhi-weather" class="optionweather">☀️</div>
+        <div id="delhi-weather" class="optionweather">--</div>
         <div id="delhi-temperature" class="optiontemperature">--°c</div>
     </div>
     <div id="mumbai" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="mumbai-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">MUMBAI</h1>
-        <div id="mumbai-weather" class="optionweather">☀️</div>
+        <div id="mumbai-weather" class="optionweather">--</div>
         <div id="mumbai-temperature" class="optiontemperature">--°c</div>
     </div>
     <div id="kolkata" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="kolkata-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">KOLKATA</h1>
-        <div id="kolkata-weather" class="optionweather">☀️</div>
+        <div id="kolkata-weather" class="optionweather">--</div>
         <div id="kolkata-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="chennai" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="chennai-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">CHENNAI</h1>
-        <div id="chennai-weather" class="optionweather">☀️</div>
+        <div id="chennai-weather" class="optionweather">--</div>
         <div id="chennai-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="hyderabad" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="hyderabad-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">HYDERABAD</h1>
-        <div id="hyderabad-weather" class="optionweather">☀️</div>
+        <div id="hyderabad-weather" class="optionweather">--</div>
         <div id="hyderabad-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="bengaluru" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="bengaluru-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">BENGALURU</h1>
-        <div id="bengaluru-weather" class="optionweather">☀️</div>
+        <div id="bengaluru-weather" class="optionweather">--</div>
         <div id="bengaluru-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="chandigarh" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="chandigarh-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">CHANDIGARH</h1>
-        <div id="chandigarh-weather" class="optionweather">☀️</div>
+        <div id="chandigarh-weather" class="optionweather">--</div>
         <div id="chandigarh-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="jaipur" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="jaipur-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">JAIPUR</h1>
-        <div id="jaipur-weather" class="optionweather">☀️</div>
+        <div id="jaipur-weather" class="optionweather">--</div>
         <div id="jaipur-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="lucknow" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="lucknow-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">LUCKNOW</h1>
-        <div id="lucknow-weather" class="optionweather">☀️</div>
+        <div id="lucknow-weather" class="optionweather">--</div>
         <div id="lucknow-temperature" class="optiontemperature">--°c</div>
     </div>
 
     <div id="ahmedabad" class="optioncard flex flex-col items-center rounded-2xl bg-white/20 w-40 h-30 p-5 cursor-pointer" style="flex-shrink:0;">
         <h1 id="ahmedabad-name" style="font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande','Lucida Sans',Arial,sans-serif;" class="optioncity">AHMEDABAD</h1>
-        <div id="ahmedabad-weather" class="optionweather">☀️</div>
+        <div id="ahmedabad-weather" class="optionweather">--</div>
         <div id="ahmedabad-temperature" class="optiontemperature">--°c</div>
     </div>
     </div>
