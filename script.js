@@ -93,7 +93,7 @@ function defaultweather(e, cityname){
     let cloud = 0;
     const API_KEY = 'f423002432946d1683c93e6b1e160dc5';
     if(cityname.trim()){
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${API_KEY}`).then((response) =>
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname.trim()}&appid=${API_KEY}`).then((response) =>
             response.json()).then((data) => {
                 if(data.cod === 200){
                     cityName.innerText = cityname.toUpperCase();
